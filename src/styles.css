@@ -31,3 +31,21 @@ img.logo {
   color: rgb(52, 192, 192);
   margin-left: 10rem;
 }
+
+footer p {
+  text-decoration: none;
+  color: #3f3a3a;
+  font-size: 18px;
+  font-weight: 800;
+  display: flex;
+  align-items: left;
+}
+
+.copyright {
+  border: 2px #3f3a3a solid;
+  background-color: white;
+  padding: 20px 10px;
+  width: 95vw;
+  bottom: 4%;
+  position: fixed;
+}
