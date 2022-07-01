@@ -48,7 +48,7 @@ const showModalPopup = async (id) => {
     </div>
       <div class='comments-container'>
       ${comments.length > 0 ? `
-      ${comments.map((comment) => {
+      ${comments.forEach((comment) => {
     const li = document.createElement('li');
     li.innerText = `${comment.creation_date} ${comment.username}: ${comment.comment}`;
     ul.appendChild(li);
