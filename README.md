@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+## GREAT SHOWS
 
 > API-based webapp project.
 
@@ -13,7 +13,7 @@
 
 ## Live Demo 
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://gasangw.github.io/JavaScript-Capstone-KanBan/)
 
 
 ## Getting Started
