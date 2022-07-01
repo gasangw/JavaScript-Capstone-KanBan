@@ -56,6 +56,15 @@ li {
   column-gap: 16px;
 }
 
+.card {
+  box-shadow: 0.3px 6px 8px rgb(0,0,0,0.8);
+  border-radius: 10px;
+}
+
+.card-img-top {
+  border-radius: 10px;
+}
+
 .subtitles {
   display: grid;
   grid-template-columns: 1fr;
