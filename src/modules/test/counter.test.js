@@ -1,8 +1,4 @@
-/**
- * @jest-environment jsdom
- */
-
-const { itemCounter } = require('../counter.js');
+import { itemCounter } from '../counter.js';
 
 test('Should output the total items from API displayed on homepage', () => {
   const result = [

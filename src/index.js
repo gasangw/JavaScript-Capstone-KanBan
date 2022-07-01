@@ -1,8 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 
-import { updateLikes, postLikes, fetchData } from './modules/getShowsList.js';
+import {
+  postLikes, fetchData, updateLikes, postComment,
+} from './modules/getShowsList.js';
 
 fetchData();
-updateLikes();
+postComment();
 postLikes();
+updateLikes();
