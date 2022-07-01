@@ -23,7 +23,7 @@
 
 ## Video link 
 
-[Link to the video](https://livedemo.com)
+[Link to the video](https://drive.google.com/drive/folders/1EaRhrEY7YdfH0yIyLmkUm_hZpiKe7ZVi)
 
 ### Prerequisites
 
