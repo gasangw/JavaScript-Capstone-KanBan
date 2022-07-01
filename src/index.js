@@ -4,6 +4,3 @@ import './style.css';
 import fetchData from './modules/getShowsList.js';
 
 fetchData();
-/* postComment();
-postLikes();
-updateLikes(); */
