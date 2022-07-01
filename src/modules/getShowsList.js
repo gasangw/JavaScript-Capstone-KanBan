@@ -1,9 +1,11 @@
 import LikeObj from './apiObject.js';
 import showModalPopup from './popup.js';
+import addComment from './addComment.js';
 
 const InvolvementApiKey = 'oWfus23KNVDBoOzs2EjU';
 
 const appIDLikes = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${InvolvementApiKey}/likes`;
+
 const fetchLikes = async (appIDLikes) => {
   const response = await fetch(appIDLikes);
   const result = response.json();
@@ -100,6 +102,28 @@ const postLikes = async () => {
       });
     });
   }
+};
+
+export const postComment = () => {
+  const modal = document.querySelector('.modal');
+  modal.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const yyyy = today.getFullYear();
+    today = `${yyyy}-${mm}-${dd}`;
+    const username = document.getElementById('name').value;
+    const comment = document.getElementById('textarea').value;
+    const id = document.querySelector('.hidden').value;
+    const commentList = document.querySelector('.comments-list');
+    commentList.childNodes[0].innerHTML = `Comments (${commentList.childNodes.length})`;
+    const li = document.createElement('li');
+    li.innerText = `${today} ${username}: ${comment}`;
+    commentList.appendChild(li);
+    addComment(id, username, comment);
+    document.querySelector('.needs-validation').reset();
+  });
 };
 
 export {
