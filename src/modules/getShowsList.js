@@ -38,7 +38,6 @@ const fetchData = async () => {
         `;
 
     show.innerHTML = template;
-    return res;
   });
   const btnComments = document.querySelectorAll('.comments');
   btnComments.forEach((btn) => {

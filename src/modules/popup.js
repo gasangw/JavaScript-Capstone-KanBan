@@ -52,7 +52,6 @@ const showModalPopup = async (id) => {
     const li = document.createElement('li');
     li.innerText = `${comment.creation_date} ${comment.username}: ${comment.comment}`;
     ul.appendChild(li);
-    return comment;
   })}
       ` : ''
 }
