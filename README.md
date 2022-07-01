@@ -27,15 +27,15 @@
 
 ### Prerequisites
 
-## Use callbacks and promises.
+- Use callbacks and promises.
 
-## Install webpack
+- Install webpack
 
-## Use modules
+- Use modules
 
-## Use AAA pattern for unit tests.
+- Use AAA pattern for unit tests.
 
-### Deployment
+- Deployment
 
 
 
@@ -44,7 +44,7 @@
 👤 **Bwalya Nonde**
 
 - GitHub: [@githubhandle](https://github.com/BwalyaNond)
-- Twitter: [@twitterhandle]((https://twitter.com/nonde_bwalya)
+- Twitter: [@twitterhandle](https://twitter.com/nonde_bwalya)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/bwalya-nonde-5865601a9/)
 
 👤 **Gasangwa Thomas**
