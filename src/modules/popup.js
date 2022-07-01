@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import { Modal } from 'bootstrap';
 
 const popUpContainer = document.getElementById('staticBackdrop');

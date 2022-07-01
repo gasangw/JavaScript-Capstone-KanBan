@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import LikeObj from './apiObject.js';
 import showModalPopup from './popup.js';
 import addComment from './addComment.js';
@@ -6,6 +7,7 @@ import { displayItemCounted } from './counter.js';
 const InvolvementApiKey = 'oWfus23KNVDBoOzs2EjU';
 
 const appIDLikes = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${InvolvementApiKey}/likes`;
+
 const fetchLikes = async (appIDLikes) => {
   const response = await fetch(appIDLikes);
   const result = response.json();
@@ -36,7 +38,6 @@ const fetchData = async () => {
 </div>
 </li>
         `;
-
     show.innerHTML = template;
   });
   const btnComments = document.querySelectorAll('.comments');
