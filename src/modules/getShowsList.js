@@ -1,11 +1,11 @@
 import LikeObj from './apiObject.js';
 import showModalPopup from './popup.js';
 import addComment from './addComment.js';
+import { displayItemCounted } from './counter.js';
 
 const InvolvementApiKey = 'oWfus23KNVDBoOzs2EjU';
 
 const appIDLikes = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${InvolvementApiKey}/likes`;
-
 const fetchLikes = async (appIDLikes) => {
   const response = await fetch(appIDLikes);
   const result = response.json();
@@ -18,7 +18,6 @@ let template = '';
 const fetchData = async () => {
   const data = await fetch('https://api.tvmaze.com/search/shows?q=girls');
   const result = await data.json();
-  // eslint-disable-next-line array-callback-return
   result.map((res, index) => {
     template += `
   <li id="${res.show.id}" class="col-sm mt-3">
@@ -37,7 +36,9 @@ const fetchData = async () => {
 </div>
 </li>
         `;
+
     show.innerHTML = template;
+    return res;
   });
   const btnComments = document.querySelectorAll('.comments');
   btnComments.forEach((btn) => {
@@ -46,6 +47,7 @@ const fetchData = async () => {
       showModalPopup(showId);
     });
   });
+  displayItemCounted(result);
 };
 
 const updateLikes = async () => {
