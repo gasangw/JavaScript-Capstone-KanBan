@@ -1,4 +1,14 @@
+import LikeObj from './apiObject.js';
 import showModalPopup from './popup.js';
+
+const InvolvementApiKey = 'oWfus23KNVDBoOzs2EjU';
+
+const appIDLikes = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${InvolvementApiKey}/likes`;
+const fetchLikes = async (appIDLikes) => {
+  const response = await fetch(appIDLikes);
+  const result = response.json();
+  return result;
+};
 
 const show = document.querySelector('.main-container');
 let template = '';
@@ -36,4 +46,64 @@ const fetchData = async () => {
   });
 };
 
-export default fetchData;
+const updateLikes = async () => {
+  fetchLikes(appIDLikes).then((response) => response).then((response) => {
+    const keys = Object.keys(response);
+    keys.forEach((key) => {
+      const likes = document.querySelectorAll('.likes');
+      [...likes].forEach((item) => {
+        const showID = parseInt(
+          item.previousElementSibling.lastElementChild.getAttribute(
+            'data-id',
+          ),
+          10,
+        );
+        if (response[key].item_id === showID) {
+          item.innerText = `${response[key].likes} Likes`;
+          if (response[key].likes > 0) {
+            item.previousElementSibling.lastElementChild.classList.add('red');
+          }
+        }
+      });
+    });
+  });
+};
+
+const postLikes = async () => {
+  const data = await fetch('https://api.tvmaze.com/search/shows?q=girls');
+  const result = await data.json();
+  const clickLikes = document.querySelectorAll('.heart');
+  const likeObj = new LikeObj();
+  if (result.length !== 0) {
+    [...clickLikes].forEach((res) => {
+      res.addEventListener('click', (e) => {
+        likeObj.item_id = parseInt(e.target.getAttribute('data-id'), 10);
+        fetch(appIDLikes, {
+          method: 'POST',
+          body: JSON.stringify(likeObj),
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+          },
+        });
+
+        const totalLikes = e.target.parentElement.nextElementSibling;
+        fetchLikes(appIDLikes)
+          .then((response) => response)
+          .then((response) => {
+            const keys = Object.keys(response);
+            keys.forEach((key) => {
+              if (response[key].item_id === likeObj.item_id) {
+                totalLikes.innerText = `${response[key].likes} Likes`;
+              }
+            });
+          });
+      });
+    });
+  }
+};
+
+export {
+  updateLikes,
+  postLikes,
+  fetchData,
+};
