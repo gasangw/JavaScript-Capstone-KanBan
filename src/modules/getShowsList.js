@@ -1,3 +1,5 @@
+import showModalPopup from './popup.js';
+
 const show = document.querySelector('.main-container');
 let template = '';
 
@@ -24,6 +26,13 @@ const fetchData = async () => {
 </li>
         `;
     show.innerHTML = template;
+  });
+  const btnComments = document.querySelectorAll('.comments');
+  btnComments.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const showId = e.target.parentNode.parentNode.parentNode.parentNode.id;
+      showModalPopup(showId);
+    });
   });
 };
 
