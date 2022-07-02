@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.header h1 {
+  margin-left: 50px;
+}
+
+.space {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-1 {
+  box-shadow: 4px 5px 7px 0 rgb(60%, 50%, 10%, 30%);
+  border: 1px solid #000;
+}
+
+.btn-container {
+  text-align: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.popup-image {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  column-gap: 16px;
+}
+
+.card {
+  box-shadow: 0.3px 6px 8px rgb(0, 0, 0, 0.8);
+  border-radius: 10px;
+}
+
+.card-img-top {
+  border-radius: 10px;
+}
+
+.subtitles {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.subtitles-container {
+  display: grid;
+}
+
+.comments-container {
+  display: grid;
+  justify-content: center;
+}
+
+form.needs-validation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit {
+  text-align: center;
+}
+
+.add-container h3 {
+  text-align: center;
+}
+
+.btn-submit {
+  text-align: center;
+}
+
+.input-container {
+  margin: 12px;
+}
+
+span {
+  float: right;
+  cursor: pointer;
+}
+
+footer p {
+  text-decoration: none;
+  color: #3f3a3a;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 800;
+  text-align: center;
+}
+
+.copyright {
+  border: 2px #3f3a3a solid;
+  background-color: white;
+  padding: 20px 10px;
+  width: 95vw;
+  bottom: 4%;
+  position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+  .popup-image {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  img#staticBackdropLabel {
+    width: 100%;
+  }
+}
